@@ -10,7 +10,7 @@ class BookShop with _$BookShop {
     String? name,
     String? location,
     String? phone,
-    int? status,
+    bool? status,
     @JsonKey(name: 'user_id') int? userId,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

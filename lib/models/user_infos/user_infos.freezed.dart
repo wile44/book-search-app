@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user.dart';
+part of 'user_infos.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,51 +14,57 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+UserInfos _$UserInfosFromJson(Map<String, dynamic> json) {
+  return _UserInfos.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
+mixin _$UserInfos {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   @JsonKey(name: 'email_verified_at')
   dynamic get emailVerifiedAt => throw _privateConstructorUsedError;
-  int? get isAdmin => throw _privateConstructorUsedError;
-  int? get isActive => throw _privateConstructorUsedError;
+  bool? get isAdmin => throw _privateConstructorUsedError;
+  bool? get isActive => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'book_shops')
+  List<BookShop>? get bookShops => throw _privateConstructorUsedError;
+  List<Book>? get books => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $UserInfosCopyWith<UserInfos> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
+abstract class $UserInfosCopyWith<$Res> {
+  factory $UserInfosCopyWith(UserInfos value, $Res Function(UserInfos) then) =
+      _$UserInfosCopyWithImpl<$Res>;
   $Res call(
       {int? id,
       String? name,
       String? email,
       @JsonKey(name: 'email_verified_at') dynamic emailVerifiedAt,
-      int? isAdmin,
-      int? isActive,
+      bool? isAdmin,
+      bool? isActive,
       @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt});
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'book_shops') List<BookShop>? bookShops,
+      List<Book>? books});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$UserInfosCopyWithImpl<$Res> implements $UserInfosCopyWith<$Res> {
+  _$UserInfosCopyWithImpl(this._value, this._then);
 
-  final User _value;
+  final UserInfos _value;
   // ignore: unused_field
-  final $Res Function(User) _then;
+  final $Res Function(UserInfos) _then;
 
   @override
   $Res call({
@@ -70,6 +76,8 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? isActive = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? bookShops = freezed,
+    Object? books = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -91,11 +99,11 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       isAdmin: isAdmin == freezed
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as bool?,
       isActive: isActive == freezed
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as bool?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -104,34 +112,46 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      bookShops: bookShops == freezed
+          ? _value.bookShops
+          : bookShops // ignore: cast_nullable_to_non_nullable
+              as List<BookShop>?,
+      books: books == freezed
+          ? _value.books
+          : books // ignore: cast_nullable_to_non_nullable
+              as List<Book>?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_UserInfosCopyWith<$Res> implements $UserInfosCopyWith<$Res> {
+  factory _$$_UserInfosCopyWith(
+          _$_UserInfos value, $Res Function(_$_UserInfos) then) =
+      __$$_UserInfosCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? id,
       String? name,
       String? email,
       @JsonKey(name: 'email_verified_at') dynamic emailVerifiedAt,
-      int? isAdmin,
-      int? isActive,
+      bool? isAdmin,
+      bool? isActive,
       @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt});
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'book_shops') List<BookShop>? bookShops,
+      List<Book>? books});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
-      : super(_value, (v) => _then(v as _$_User));
+class __$$_UserInfosCopyWithImpl<$Res> extends _$UserInfosCopyWithImpl<$Res>
+    implements _$$_UserInfosCopyWith<$Res> {
+  __$$_UserInfosCopyWithImpl(
+      _$_UserInfos _value, $Res Function(_$_UserInfos) _then)
+      : super(_value, (v) => _then(v as _$_UserInfos));
 
   @override
-  _$_User get _value => super._value as _$_User;
+  _$_UserInfos get _value => super._value as _$_UserInfos;
 
   @override
   $Res call({
@@ -143,8 +163,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? isActive = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? bookShops = freezed,
+    Object? books = freezed,
   }) {
-    return _then(_$_User(
+    return _then(_$_UserInfos(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -164,11 +186,11 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       isAdmin: isAdmin == freezed
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as bool?,
       isActive: isActive == freezed
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as bool?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -177,14 +199,22 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      bookShops: bookShops == freezed
+          ? _value._bookShops
+          : bookShops // ignore: cast_nullable_to_non_nullable
+              as List<BookShop>?,
+      books: books == freezed
+          ? _value._books
+          : books // ignore: cast_nullable_to_non_nullable
+              as List<Book>?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  _$_User(
+class _$_UserInfos implements _UserInfos {
+  _$_UserInfos(
       {this.id,
       this.name,
       this.email,
@@ -192,9 +222,14 @@ class _$_User implements _User {
       this.isAdmin,
       this.isActive,
       @JsonKey(name: 'created_at') this.createdAt,
-      @JsonKey(name: 'updated_at') this.updatedAt});
+      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'book_shops') final List<BookShop>? bookShops,
+      final List<Book>? books})
+      : _bookShops = bookShops,
+        _books = books;
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_UserInfos.fromJson(Map<String, dynamic> json) =>
+      _$$_UserInfosFromJson(json);
 
   @override
   final int? id;
@@ -206,26 +241,44 @@ class _$_User implements _User {
   @JsonKey(name: 'email_verified_at')
   final dynamic emailVerifiedAt;
   @override
-  final int? isAdmin;
+  final bool? isAdmin;
   @override
-  final int? isActive;
+  final bool? isActive;
   @override
   @JsonKey(name: 'created_at')
   final DateTime? createdAt;
   @override
   @JsonKey(name: 'updated_at')
   final DateTime? updatedAt;
+  final List<BookShop>? _bookShops;
+  @override
+  @JsonKey(name: 'book_shops')
+  List<BookShop>? get bookShops {
+    final value = _bookShops;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<Book>? _books;
+  @override
+  List<Book>? get books {
+    final value = _books;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, emailVerifiedAt: $emailVerifiedAt, isAdmin: $isAdmin, isActive: $isActive, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'UserInfos(id: $id, name: $name, email: $email, emailVerifiedAt: $emailVerifiedAt, isAdmin: $isAdmin, isActive: $isActive, createdAt: $createdAt, updatedAt: $updatedAt, bookShops: $bookShops, books: $books)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$_UserInfos &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
@@ -234,7 +287,10 @@ class _$_User implements _User {
             const DeepCollectionEquality().equals(other.isAdmin, isAdmin) &&
             const DeepCollectionEquality().equals(other.isActive, isActive) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt));
+            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
+            const DeepCollectionEquality()
+                .equals(other._bookShops, _bookShops) &&
+            const DeepCollectionEquality().equals(other._books, _books));
   }
 
   @JsonKey(ignore: true)
@@ -248,31 +304,36 @@ class _$_User implements _User {
       const DeepCollectionEquality().hash(isAdmin),
       const DeepCollectionEquality().hash(isActive),
       const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(updatedAt));
+      const DeepCollectionEquality().hash(updatedAt),
+      const DeepCollectionEquality().hash(_bookShops),
+      const DeepCollectionEquality().hash(_books));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_UserInfosCopyWith<_$_UserInfos> get copyWith =>
+      __$$_UserInfosCopyWithImpl<_$_UserInfos>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(this);
+    return _$$_UserInfosToJson(this);
   }
 }
 
-abstract class _User implements User {
-  factory _User(
+abstract class _UserInfos implements UserInfos {
+  factory _UserInfos(
       {final int? id,
       final String? name,
       final String? email,
       @JsonKey(name: 'email_verified_at') final dynamic emailVerifiedAt,
-      final int? isAdmin,
-      final int? isActive,
+      final bool? isAdmin,
+      final bool? isActive,
       @JsonKey(name: 'created_at') final DateTime? createdAt,
-      @JsonKey(name: 'updated_at') final DateTime? updatedAt}) = _$_User;
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      @JsonKey(name: 'book_shops') final List<BookShop>? bookShops,
+      final List<Book>? books}) = _$_UserInfos;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _UserInfos.fromJson(Map<String, dynamic> json) =
+      _$_UserInfos.fromJson;
 
   @override
   int? get id => throw _privateConstructorUsedError;
@@ -284,9 +345,9 @@ abstract class _User implements User {
   @JsonKey(name: 'email_verified_at')
   dynamic get emailVerifiedAt => throw _privateConstructorUsedError;
   @override
-  int? get isAdmin => throw _privateConstructorUsedError;
+  bool? get isAdmin => throw _privateConstructorUsedError;
   @override
-  int? get isActive => throw _privateConstructorUsedError;
+  bool? get isActive => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'created_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -294,6 +355,12 @@ abstract class _User implements User {
   @JsonKey(name: 'updated_at')
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'book_shops')
+  List<BookShop>? get bookShops => throw _privateConstructorUsedError;
+  @override
+  List<Book>? get books => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserInfosCopyWith<_$_UserInfos> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:book_search/config.dart';
 import 'package:book_search/models/books_response/datum.dart';
 import 'package:book_search/provider/provider.dart';
@@ -17,10 +19,16 @@ class Homescreen extends StatefulWidget {
 
 class _HomescreenState extends State<Homescreen> {
   late Future<BooksResponse> futureBooks;
+  bool _isLogggedIn = false;
+
+  void _authStatus() async {
+    _isLogggedIn = await AuthService.isLoggedIn();
+  }
 
   @override
   void initState() {
     super.initState();
+    _authStatus();
     futureBooks = fetchBooks();
   }
 
@@ -28,7 +36,6 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     context.read<BookSearch>().fetchBooks;
     var list = Provider.of<BookSearch>(context).allBook;
-    // List<String> list = ['book 1', 'book 2', 'book 3'];
     return Scaffold(
       appBar: AppBar(
         title: Text('Book search'),
@@ -48,35 +55,31 @@ class _HomescreenState extends State<Homescreen> {
         future: futureBooks,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            // return ListTile(
-            //     leading: Container(
-            //       height: 200,
-            //       // decoration: BoxDecoration(
-            //       //   image: DecorationImage(
-            //       //     image: NetworkImage(snapshot.data!.data!.first.cover!),
-            //       //   ),
-            //       // ),
-            //     ),
-            //     title: Text(snapshot.data!.data!.first.name!));
-            print(snapshot.data!.data!.length);
+            // log(snapshot.data!.data!.toString());
             var length = snapshot.data!.data!.length;
             var data = snapshot.data!.data!;
+
             return Container(
                 child: ListView.builder(
                     itemCount: length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
+                      print('================================================================');
+                      print(Config.imageURL + data[index].cover!);
                       return Card(
+                        
                         // child: Container(child: Text(data[index].name!)),
                         child: ListTile(
+                          onTap: () => Navigator.pushNamed(
+                              context, '/book-details',
+                              arguments: data[index]),
                           leading: Container(
                               width: 70,
                               child: Image.network(
-                                Config.apiURL + data[index].cover!,
+                                Config.imageURL + '/' + data[index].cover!,
                                 fit: BoxFit.cover,
                               )),
                           title: Text(data[index].name!),
-                          trailing: Icon(Icons.more_vert),
                         ),
                       );
                     }));
@@ -89,15 +92,26 @@ class _HomescreenState extends State<Homescreen> {
         },
       ),
       drawer: Drawer(
-        
           child: ListView(
         children: [
-        
-          ListTile(
-            onTap: () => AuthService.logout(context),
-            leading: Icon(Icons.logout),
-            title: Text('logout'),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, "/request");
+            },
+            child: const Text('request'),
           ),
+          if (!_isLogggedIn)
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/login'),
+              leading: Icon(Icons.logout),
+              title: Text('login'),
+            ),
+          if (_isLogggedIn)
+            ListTile(
+              onTap: () => AuthService.logout(context),
+              leading: Icon(Icons.logout),
+              title: Text('logout'),
+            ),
         ],
       )),
     );
@@ -106,8 +120,7 @@ class _HomescreenState extends State<Homescreen> {
 
 class UserSearch extends SearchDelegate<Datum> {
   final List<Datum>? users;
-  
-  
+
   UserSearch({required this.users});
 
   @override
@@ -143,17 +156,19 @@ class UserSearch extends SearchDelegate<Datum> {
   @override
   Widget buildSuggestions(BuildContext context) {
     // List<Datum>? suggestions1 = users;
-     final suggestions = users!.where((name) {
+    final suggestions = users!.where((name) {
       return name.name!.toLowerCase().contains(query.toLowerCase());
     });
-      //  final suggestions = query.isEmpty ? suggestions1 : [];
+    //  final suggestions = query.isEmpty ? suggestions1 : [];
     return ListView.builder(
       itemCount: suggestions.length,
       itemBuilder: (content, index) => ListTile(
-        title: Text(suggestions.toList()[index].name!)),
+          onTap: () => Navigator.pushNamed(context, '/book-details',
+              arguments: suggestions.toList()[index]),
+          title: Text(suggestions.toList()[index].name!)),
     );
     // return Consumer<BookSearch >(
-    
+
     //   builder: (context, state, child) {
     //     return ListViewWidget(list: state.allBook.data!.toList(), context: context);
     //   },

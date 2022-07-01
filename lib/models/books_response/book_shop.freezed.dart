@@ -24,7 +24,7 @@ mixin _$BookShop {
   String? get name => throw _privateConstructorUsedError;
   String? get location => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
-  bool? get status => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_id')
   int? get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
@@ -47,7 +47,7 @@ abstract class $BookShopCopyWith<$Res> {
       String? name,
       String? location,
       String? phone,
-      bool? status,
+      int? status,
       @JsonKey(name: 'user_id') int? userId,
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt});
@@ -92,7 +92,7 @@ class _$BookShopCopyWithImpl<$Res> implements $BookShopCopyWith<$Res> {
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as int?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ abstract class _$$_BookShopCopyWith<$Res> implements $BookShopCopyWith<$Res> {
       String? name,
       String? location,
       String? phone,
-      bool? status,
+      int? status,
       @JsonKey(name: 'user_id') int? userId,
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt});
@@ -167,7 +167,7 @@ class __$$_BookShopCopyWithImpl<$Res> extends _$BookShopCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as int?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -209,7 +209,7 @@ class _$_BookShop implements _BookShop {
   @override
   final String? phone;
   @override
-  final bool? status;
+  final int? status;
   @override
   @JsonKey(name: 'user_id')
   final int? userId;
@@ -270,7 +270,7 @@ abstract class _BookShop implements BookShop {
       final String? name,
       final String? location,
       final String? phone,
-      final bool? status,
+      final int? status,
       @JsonKey(name: 'user_id') final int? userId,
       @JsonKey(name: 'created_at') final DateTime? createdAt,
       @JsonKey(name: 'updated_at') final DateTime? updatedAt}) = _$_BookShop;
@@ -286,7 +286,7 @@ abstract class _BookShop implements BookShop {
   @override
   String? get phone => throw _privateConstructorUsedError;
   @override
-  bool? get status => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'user_id')
   int? get userId => throw _privateConstructorUsedError;

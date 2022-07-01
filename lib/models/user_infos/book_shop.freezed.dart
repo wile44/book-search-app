@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user.dart';
+part of 'book_shop.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,19 +14,19 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+BookShop _$BookShopFromJson(Map<String, dynamic> json) {
+  return _BookShop.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
+mixin _$BookShop {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'email_verified_at')
-  dynamic get emailVerifiedAt => throw _privateConstructorUsedError;
-  int? get isAdmin => throw _privateConstructorUsedError;
-  int? get isActive => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
+  bool? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int? get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
@@ -34,40 +34,41 @@ mixin _$User {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $BookShopCopyWith<BookShop> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
+abstract class $BookShopCopyWith<$Res> {
+  factory $BookShopCopyWith(BookShop value, $Res Function(BookShop) then) =
+      _$BookShopCopyWithImpl<$Res>;
   $Res call(
       {int? id,
       String? name,
-      String? email,
-      @JsonKey(name: 'email_verified_at') dynamic emailVerifiedAt,
-      int? isAdmin,
-      int? isActive,
+      String? location,
+      String? phone,
+      bool? status,
+      @JsonKey(name: 'user_id') int? userId,
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$BookShopCopyWithImpl<$Res> implements $BookShopCopyWith<$Res> {
+  _$BookShopCopyWithImpl(this._value, this._then);
 
-  final User _value;
+  final BookShop _value;
   // ignore: unused_field
-  final $Res Function(User) _then;
+  final $Res Function(BookShop) _then;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? email = freezed,
-    Object? emailVerifiedAt = freezed,
-    Object? isAdmin = freezed,
-    Object? isActive = freezed,
+    Object? location = freezed,
+    Object? phone = freezed,
+    Object? status = freezed,
+    Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -80,21 +81,21 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String?,
-      emailVerifiedAt: emailVerifiedAt == freezed
-          ? _value.emailVerifiedAt
-          : emailVerifiedAt // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      isAdmin: isAdmin == freezed
-          ? _value.isAdmin
-          : isAdmin // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isActive: isActive == freezed
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as int?,
       createdAt: createdAt == freezed
           ? _value.createdAt
@@ -109,42 +110,44 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_BookShopCopyWith<$Res> implements $BookShopCopyWith<$Res> {
+  factory _$$_BookShopCopyWith(
+          _$_BookShop value, $Res Function(_$_BookShop) then) =
+      __$$_BookShopCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? id,
       String? name,
-      String? email,
-      @JsonKey(name: 'email_verified_at') dynamic emailVerifiedAt,
-      int? isAdmin,
-      int? isActive,
+      String? location,
+      String? phone,
+      bool? status,
+      @JsonKey(name: 'user_id') int? userId,
       @JsonKey(name: 'created_at') DateTime? createdAt,
       @JsonKey(name: 'updated_at') DateTime? updatedAt});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
-      : super(_value, (v) => _then(v as _$_User));
+class __$$_BookShopCopyWithImpl<$Res> extends _$BookShopCopyWithImpl<$Res>
+    implements _$$_BookShopCopyWith<$Res> {
+  __$$_BookShopCopyWithImpl(
+      _$_BookShop _value, $Res Function(_$_BookShop) _then)
+      : super(_value, (v) => _then(v as _$_BookShop));
 
   @override
-  _$_User get _value => super._value as _$_User;
+  _$_BookShop get _value => super._value as _$_BookShop;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? email = freezed,
-    Object? emailVerifiedAt = freezed,
-    Object? isAdmin = freezed,
-    Object? isActive = freezed,
+    Object? location = freezed,
+    Object? phone = freezed,
+    Object? status = freezed,
+    Object? userId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_$_User(
+    return _then(_$_BookShop(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -153,21 +156,21 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      location: location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String?,
-      emailVerifiedAt: emailVerifiedAt == freezed
-          ? _value.emailVerifiedAt
-          : emailVerifiedAt // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      isAdmin: isAdmin == freezed
-          ? _value.isAdmin
-          : isAdmin // ignore: cast_nullable_to_non_nullable
-              as int?,
-      isActive: isActive == freezed
-          ? _value.isActive
-          : isActive // ignore: cast_nullable_to_non_nullable
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
               as int?,
       createdAt: createdAt == freezed
           ? _value.createdAt
@@ -183,32 +186,33 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  _$_User(
+class _$_BookShop implements _BookShop {
+  _$_BookShop(
       {this.id,
       this.name,
-      this.email,
-      @JsonKey(name: 'email_verified_at') this.emailVerifiedAt,
-      this.isAdmin,
-      this.isActive,
+      this.location,
+      this.phone,
+      this.status,
+      @JsonKey(name: 'user_id') this.userId,
       @JsonKey(name: 'created_at') this.createdAt,
       @JsonKey(name: 'updated_at') this.updatedAt});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_BookShop.fromJson(Map<String, dynamic> json) =>
+      _$$_BookShopFromJson(json);
 
   @override
   final int? id;
   @override
   final String? name;
   @override
-  final String? email;
+  final String? location;
   @override
-  @JsonKey(name: 'email_verified_at')
-  final dynamic emailVerifiedAt;
+  final String? phone;
   @override
-  final int? isAdmin;
+  final bool? status;
   @override
-  final int? isActive;
+  @JsonKey(name: 'user_id')
+  final int? userId;
   @override
   @JsonKey(name: 'created_at')
   final DateTime? createdAt;
@@ -218,21 +222,20 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, emailVerifiedAt: $emailVerifiedAt, isAdmin: $isAdmin, isActive: $isActive, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'BookShop(id: $id, name: $name, location: $location, phone: $phone, status: $status, userId: $userId, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$_BookShop &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality()
-                .equals(other.emailVerifiedAt, emailVerifiedAt) &&
-            const DeepCollectionEquality().equals(other.isAdmin, isAdmin) &&
-            const DeepCollectionEquality().equals(other.isActive, isActive) &&
+            const DeepCollectionEquality().equals(other.location, location) &&
+            const DeepCollectionEquality().equals(other.phone, phone) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt));
   }
@@ -243,50 +246,50 @@ class _$_User implements _User {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(emailVerifiedAt),
-      const DeepCollectionEquality().hash(isAdmin),
-      const DeepCollectionEquality().hash(isActive),
+      const DeepCollectionEquality().hash(location),
+      const DeepCollectionEquality().hash(phone),
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(createdAt),
       const DeepCollectionEquality().hash(updatedAt));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_BookShopCopyWith<_$_BookShop> get copyWith =>
+      __$$_BookShopCopyWithImpl<_$_BookShop>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(this);
+    return _$$_BookShopToJson(this);
   }
 }
 
-abstract class _User implements User {
-  factory _User(
+abstract class _BookShop implements BookShop {
+  factory _BookShop(
       {final int? id,
       final String? name,
-      final String? email,
-      @JsonKey(name: 'email_verified_at') final dynamic emailVerifiedAt,
-      final int? isAdmin,
-      final int? isActive,
+      final String? location,
+      final String? phone,
+      final bool? status,
+      @JsonKey(name: 'user_id') final int? userId,
       @JsonKey(name: 'created_at') final DateTime? createdAt,
-      @JsonKey(name: 'updated_at') final DateTime? updatedAt}) = _$_User;
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt}) = _$_BookShop;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _BookShop.fromJson(Map<String, dynamic> json) = _$_BookShop.fromJson;
 
   @override
   int? get id => throw _privateConstructorUsedError;
   @override
   String? get name => throw _privateConstructorUsedError;
   @override
-  String? get email => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'email_verified_at')
-  dynamic get emailVerifiedAt => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
   @override
-  int? get isAdmin => throw _privateConstructorUsedError;
+  bool? get status => throw _privateConstructorUsedError;
   @override
-  int? get isActive => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int? get userId => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'created_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -295,5 +298,6 @@ abstract class _User implements User {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_BookShopCopyWith<_$_BookShop> get copyWith =>
+      throw _privateConstructorUsedError;
 }

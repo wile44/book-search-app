@@ -1,18 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user.dart';
+part of 'book.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+_$_Book _$$_BookFromJson(Map<String, dynamic> json) => _$_Book(
       id: json['id'] as int?,
       name: json['name'] as String?,
-      email: json['email'] as String?,
-      emailVerifiedAt: json['email_verified_at'],
-      isAdmin: json['isAdmin'] as int?,
-      isActive: json['isActive'] as int?,
+      author: json['author'] as String?,
+      items: json['items'] as String?,
+      price: json['price'] as String?,
+      cover: json['cover'] as String?,
+      userId: json['user_id'] as int?,
+      bookShopId: json['book_shop_id'] as int?,
+      categoryId: json['category_id'] as int?,
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),
@@ -21,13 +24,16 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
           : DateTime.parse(json['updated_at'] as String),
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$$_BookToJson(_$_Book instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'email': instance.email,
-      'email_verified_at': instance.emailVerifiedAt,
-      'isAdmin': instance.isAdmin,
-      'isActive': instance.isActive,
+      'author': instance.author,
+      'items': instance.items,
+      'price': instance.price,
+      'cover': instance.cover,
+      'user_id': instance.userId,
+      'book_shop_id': instance.bookShopId,
+      'category_id': instance.categoryId,
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),
     };

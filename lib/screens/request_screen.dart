@@ -4,8 +4,8 @@ import 'package:snippet_coder_utils/ProgressHUD.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
 
 import '../../config.dart';
-import '../../services/api_service.dart';
 import '../../models/login_request_model.dart';
+import '../../services/api_service.dart';
 
 class RequestScreen extends StatefulWidget {
   const RequestScreen({Key? key}) : super(key: key);
@@ -48,19 +48,31 @@ class _RequestScreenState extends State<RequestScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(
               top: 50,
               bottom: 30,
               left: 20,
+              right: 20,
             ),
-            child: Text(
-              "Request",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                // color: Colors.white,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Request",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    // color: Colors.white,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/home");
+                  },
+                  child: const Text('SKIP'),
+                )
+              ],
             ),
           ),
           FormHelper.inputFieldWidget(
@@ -88,7 +100,6 @@ class _RequestScreenState extends State<RequestScreen> {
             ),
           ),
           const SizedBox(height: 10),
-
           FormHelper.inputFieldWidget(
             context,
             "username",
@@ -113,7 +124,6 @@ class _RequestScreenState extends State<RequestScreen> {
               // color: Colors.white.withOpacity(0.6),
             ),
           ),
-          
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: FormHelper.inputFieldWidget(
@@ -159,27 +169,22 @@ class _RequestScreenState extends State<RequestScreen> {
                   });
 
                   LoginRequestModel model = LoginRequestModel(
-                    email: email!,
-                    password: password!,
-                    name: fullname!
-                  );
+                      email: email!, password: password!, name: fullname!);
 
                   return APIService.userRequest(model).then((response) {
                     setState(() {
                       isAPICallProcess = false;
                     });
 
-                  
-                      FormHelper.showSimpleAlertDialog(
-                        context,
-                        Config.appName,
-                        response,
-                        "OK",
-                        () {
-                          Navigator.pop(context);
-                        },
-                      );
-                    
+                    FormHelper.showSimpleAlertDialog(
+                      context,
+                      Config.appName,
+                      response,
+                      "OK",
+                      () {
+                        Navigator.pop(context);
+                      },
+                    );
                   });
                 }
               },

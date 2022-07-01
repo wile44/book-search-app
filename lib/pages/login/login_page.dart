@@ -58,23 +58,27 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                "Login",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  // color: Colors.white,
+                  "Login",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    // color: Colors.white,
+                  ),
                 ),
-              ),
-              TextButton(onPressed: (){
-                Navigator.pushNamed(context, "/request");
-              }, child: Text('request'))
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/home");
+                  },
+                  child: Text('SKIP'),
+                ),
+            
               ],
             ),
           ),
           FormHelper.inputFieldWidget(
             context,
             "username",
-            "Username [email]",
+            "Email Address",
             (onVaidateVal) {
               if (onVaidateVal.isEmpty) {
                 return "Username is required";

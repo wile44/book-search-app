@@ -15,7 +15,7 @@ class AuthService {
     // } else {
     //   return false;
     // }
-    return true;
+    return accessToken != null;
   }
 
   static Future<void> setAccessToken(UserResponse model) async {
@@ -35,10 +35,10 @@ class AuthService {
 
   static Future<void> logout(BuildContext context) async {
     await StorageService().deleteAllSecureData();
-    Navigator.pushNamedAndRemoveUntil(
-      context,
-      "/login",
-      (route) => false,
-    );
+      // Navigator.pushNamedAndRemoveUntil(
+      //   context,
+      //   "/login",
+      //   (route) => false,
+      // );
   }
 }

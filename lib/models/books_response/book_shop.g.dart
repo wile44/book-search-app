@@ -11,7 +11,7 @@ _$_BookShop _$$_BookShopFromJson(Map<String, dynamic> json) => _$_BookShop(
       name: json['name'] as String?,
       location: json['location'] as String?,
       phone: json['phone'] as String?,
-      status: json['status'] as bool?,
+      status: json['status'] as int?,
       userId: json['user_id'] as int?,
       createdAt: json['created_at'] == null
           ? null

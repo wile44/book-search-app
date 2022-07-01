@@ -1,22 +1,32 @@
-import 'package:book_search/pages/login/login_page.dart';
-import 'package:book_search/provider/provider.dart';
-import 'package:book_search/screens/book_detail_screen.dart';
-import 'package:book_search/screens/home_screen.dart';
-import 'package:book_search/screens/request_screen.dart';
 // import 'package:book_search/screens/login_screen.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'pages/login/login_page.dart';
+import 'provider/provider.dart';
+import 'screens/book_detail_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/request_screen.dart';
 import 'services/auth_service.dart';
 
 Widget _defaultHome = const LoginPage();
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  }
+}
 
 void main() async {
+  HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
-  bool _isLogggedIn = await AuthService.isLoggedIn();
-  if (_isLogggedIn) {
+  // bool _isLogggedIn = await AuthService.isLoggedIn();
+  // if (_isLogggedIn) {
     _defaultHome = const Homescreen();
-  }
+  // }
   runApp(const MyApp());
 }
 
@@ -37,7 +47,7 @@ class MyApp extends StatelessWidget {
           '/book-details': (context) => const DetailBookPage(),
           '/home': (context) => const Homescreen(),
           '/login': (context) => const LoginPage(),
-          '/request':(context) => const RequestScreen(),
+          '/request': (context) => const RequestScreen(),
         },
       ),
     );

@@ -10,8 +10,8 @@ class User with _$User {
     String? name,
     String? email,
     @JsonKey(name: 'email_verified_at') dynamic emailVerifiedAt,
-    bool? isAdmin,
-    bool? isActive,
+    int? isAdmin,
+    int? isActive,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _User;
